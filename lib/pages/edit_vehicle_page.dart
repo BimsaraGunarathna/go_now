@@ -91,7 +91,7 @@ class _EditVehicleStatePage extends State<EditVehiclePage> {
         print('Permission has been denied');
       },
       onPermissionGranted: () async {
-        _filePaths = await FilePicker.getMultiFilePath(type: FileType.IMAGE);
+        _filePaths = await FilePicker.getMultiFilePath(type: FileType.image);
         print(_filePaths);
         _filePaths.forEach(
           (fileName, filePath) async {

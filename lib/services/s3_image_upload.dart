@@ -44,7 +44,7 @@ import '../credentials//aws_user_pool_credential.dart';
 
       //var file = File(path.join('/storage/emulated/0/New', 'second.jpg'));
       //File file = await FilePicker.getFile(type: FileType.IMAGE);
-      filePath = await FilePicker.getFilePath(type: FileType.IMAGE);
+      filePath = await FilePicker.getFilePath(type: FileType.image);
       File file = File(filePath);
       print('CHOOSEN FILE NAME: $file');
 
