@@ -55,7 +55,9 @@ import '../credentials//aws_user_pool_credential.dart';
       //String filePathString =  await file.readAsString();
       //print('FILE STRING: ' + filePathString);
 
-      final stream = http.ByteStream(DelegatingStream.typed(file.openRead()));
+      //depricated typed is removed.
+      //DelegatingStream.typed(file.openRead())
+      final stream = http.ByteStream(DelegatingStream(file.openRead()));
       final length = await file.length();
 
       final uri = Uri.parse(_s3Endpoint);

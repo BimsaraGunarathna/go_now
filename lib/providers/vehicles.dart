@@ -144,6 +144,8 @@ class Vehicles with ChangeNotifier {
     String fileName = filePath.split("/").last;
     print(fileName);
 
+    //depricated typed is removed.
+    //DelegatingStream.typed(file.openRead())
     final stream = http.ByteStream(DelegatingStream.typed(file.openRead()));
     final length = await file.length();
 
