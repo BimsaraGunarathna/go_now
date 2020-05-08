@@ -7,6 +7,9 @@ import '../pages/profile_page.dart';
 import '../pages/offers_page.dart';
 import '../pages/trip_page.dart';
 
+//icons
+import 'package:flutter_icons/flutter_icons.dart';
+
 class BottomNavigationBarController extends StatefulWidget {
   static const routeName = '/bottom-nav-bar-controller';
   @override
@@ -43,23 +46,23 @@ class _BottomNavigationBarControllerState
         currentIndex: selectedIndex,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: Text('Search'),
+            icon: Icon(Feather.home),
+            title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.landscape),
+            icon: Icon(MaterialIcons.directions_bike),
             title: Text('Trip'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            title: Text('Offers'),
+            icon: Icon(Feather.message_square),
+            title: Text('Messages'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.train),
-            title: Text('Hsot'),
+            icon: Icon(AntDesign.car),
+            title: Text('Host'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            icon: Icon(AntDesign.user),
             title: Text('Profile'),
           ),
         ],

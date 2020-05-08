@@ -41,6 +41,7 @@ dependencies:
   path_provider: ^1.6.0
   bottom_navy_bar: ^5.3.2
   vin_decoder: ^0.1.1
+  flutter_icons: ^1.1.0
   # simple_permissions: ^0.1.9
 
 dev_dependencies:
