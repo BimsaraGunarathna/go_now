@@ -40,7 +40,12 @@ class _RootPageState extends State<RootPage> {
   */
 
   Future<void> _initiateSession() async {
-    bool hasSession = await Provider.of<Auth>(context, listen: false).init();
+    Auth auth = Provider.of<Auth>(context, listen: false);
+    bool hasSession = await auth.init();
+    bool isAuthenticad = auth.isAuthenticated;
+    print('isAuthenticated : ');
+    print(isAuthenticad);
+    //bool hasSession = await Provider.of<Auth>(context, listen: false).init();
     //print('HAS SESSION IS $hasSession');
     if (hasSession) {
       setState(() {
@@ -51,6 +56,7 @@ class _RootPageState extends State<RootPage> {
 
   @override
   Widget build(BuildContext context) {
-    return _sessionRetrieved ?  BottomNavigationBarController() : LoginPage();
+    //return _sessionRetrieved ?  BottomNavigationBarController() : LoginPage();
+    return BottomNavigationBarController();
   }
 }
