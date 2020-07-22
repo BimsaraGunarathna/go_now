@@ -28,6 +28,10 @@ import './providers/wishlist.dart';
 import './providers/orders.dart';
 import './providers/auth.dart';
 
+//test
+import './testing/websocket.dart';
+import 'package:web_socket_channel/io.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -120,7 +124,11 @@ class _MyAppState extends State<MyApp> {
           //home: VINScannerPage(),
           //home: SearchPage(),
           //home: HomePage(),
-          home: RootPage(),
+          //home: RootPage(),
+          home: WebSocket(
+            title: 'Hello World',
+            channel: IOWebSocketChannel.connect('wss://3bpxptbbj1.execute-api.ap-south-1.amazonaws.com/dev'),
+          ),
           //home: BottomNavigationBarController(),
           //home: TestPage(),
           //home: EditVehiclePage(),
