@@ -124,12 +124,14 @@ class _MyAppState extends State<MyApp> {
           //home: VINScannerPage(),
           //home: SearchPage(),
           //home: HomePage(),
-          //home: RootPage(),
+          home: RootPage(),
+          /*
           home: WebSocket(
             title: 'Hello World',
             channel: IOWebSocketChannel.connect(
                 'wss://3bpxptbbj1.execute-api.ap-south-1.amazonaws.com/dev'),
           ),
+          */
           //home: BottomNavigationBarController(),
           //home: TestPage(),
           //home: EditVehiclePage(),
