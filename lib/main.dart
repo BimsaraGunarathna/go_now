@@ -127,7 +127,8 @@ class _MyAppState extends State<MyApp> {
           //home: RootPage(),
           home: WebSocket(
             title: 'Hello World',
-            channel: IOWebSocketChannel.connect('wss://3bpxptbbj1.execute-api.ap-south-1.amazonaws.com/dev'),
+            channel: IOWebSocketChannel.connect(
+                'wss://3bpxptbbj1.execute-api.ap-south-1.amazonaws.com/dev'),
           ),
           //home: BottomNavigationBarController(),
           //home: TestPage(),
@@ -155,7 +156,8 @@ class _MyAppState extends State<MyApp> {
             TripPage.routeName: (ctx) => TripPage(),
             OffersPage.routeName: (ctx) => OffersPage(),
             //Bottom Navigator
-            BottomNavigationBarController.routeName: (ctx) => BottomNavigationBarController(),
+            BottomNavigationBarController.routeName: (ctx) =>
+                BottomNavigationBarController(),
           },
         ),
       ),

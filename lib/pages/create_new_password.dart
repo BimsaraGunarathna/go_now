@@ -56,10 +56,9 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
     try {
       // Create new password
       await Provider.of<Auth>(context, listen: false).createNewForgotPassword(
-        email: ModalRoute.of(context).settings.arguments as String,
-        confirmationCode: _authData['confirmationPIN'],
-        newPassword: _authData['password']
-      );
+          email: ModalRoute.of(context).settings.arguments as String,
+          confirmationCode: _authData['confirmationPIN'],
+          newPassword: _authData['password']);
 
       Navigator.of(context).pushReplacementNamed(LoginPage.routeName);
     } on HttpException catch (error) {
@@ -144,7 +143,6 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
               key: _formKey,
               child: Column(
                 children: <Widget>[
-
                   //Enter verfication Code
                   Padding(
                     padding: EdgeInsets.fromLTRB(

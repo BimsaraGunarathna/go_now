@@ -43,6 +43,7 @@ dependencies:
   vin_decoder: ^0.1.1
   flutter_icons: ^1.1.0
   web_socket_channel: ^1.1.0
+  image: ^2.1.14
   # simple_permissions: ^0.1.9
 
 dev_dependencies:

@@ -23,21 +23,22 @@ void decode(DecodeParam param) {
   Image image = decodeImage(param.file.readAsBytesSync());
   // Resize the image to a 120x? thumbnail (maintaining the aspect ratio).
   print('IMAGE WIDTH : ${image.width} AND IMAGE HIEGHT : ${image.height}');
-  Image thumbnail = copyResize(image, width: image.width >= 1080 ? 1080 : image.width);
+  Image thumbnail =
+      copyResize(image, width: image.width >= 1080 ? 1080 : image.width);
   param.sendPort.send(thumbnail);
 }
 
 // Decode and process an image file in a separate thread (isolate) to avoid
 // stalling the main UI thread.
-Future <String> compressImage(String filePath) async {
-
+Future<String> compressImage(String filePath) async {
   ReceivePort receivePort = ReceivePort();
 
   //Get the tempory directory.
   String tempDirectoryPath = await _temporyDirectoryPath;
-  print('Tem Directory Path: ' +tempDirectoryPath);
+  print('Tem Directory Path: ' + tempDirectoryPath);
 
-  await Isolate.spawn(decode,DecodeParam(File(filePath), receivePort.sendPort));
+  await Isolate.spawn(
+      decode, DecodeParam(File(filePath), receivePort.sendPort));
 
   // Get the processed image from the isolate.
   Image image = await receivePort.first;
@@ -47,7 +48,7 @@ Future <String> compressImage(String filePath) async {
 
   //new file path
   //String toBeConvertedImagePath = '/storage/emulated/0/gn-now/' + fileName;
-  String toBeConvertedImagePath = '$tempDirectoryPath/'+ fileName;
+  String toBeConvertedImagePath = '$tempDirectoryPath/' + fileName;
   print("TO BE CONVERTED : " + toBeConvertedImagePath);
 
   File(toBeConvertedImagePath).writeAsBytesSync(encodeJpg(image, quality: 95));
