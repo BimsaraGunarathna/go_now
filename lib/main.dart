@@ -128,8 +128,6 @@ class _MyAppState extends State<MyApp> {
           */
           //home: BottomNavigationBarController(),
           //home: TestPage(),
-          //home: EditVehiclePage(),
-          //navigatorKey: locator<NavigationService>().navigatorKey,
 
           routes: {
             //Pages
