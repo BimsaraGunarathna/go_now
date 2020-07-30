@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 //Pages
 import './signup_page.dart';
 import './forgot_password_page.dart';
+import '../navigation/bottom-nav-bar-controller.dart';
 
 //providers
 import '../providers/auth.dart';
@@ -70,8 +71,8 @@ class _LoginPageState extends State<LoginPage> {
       );
 
       //Redirect to Home Interface.
-      Navigator.of(context).pushReplacementNamed(BottomNavigationBarController.routeName);
-
+      Navigator.of(context)
+          .pushReplacementNamed(BottomNavigationBarController.routeName);
     } on HttpException catch (error) {
       var errorMessage = 'Authentication failed';
       if (error.toString().contains('EMAIL_EXISTS')) {
@@ -271,7 +272,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   //Create new account Button
                   Padding(
-                    padding: EdgeInsets.fromLTRB(10, 5, 10, 15),
+                    padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                     child: Center(
                       child: InkWell(
                           child: Text(
@@ -281,6 +282,22 @@ class _LoginPageState extends State<LoginPage> {
                           onTap: () {
                             Navigator.of(context)
                                 .pushNamed(SignupPage.routeName);
+                          }),
+                    ),
+                  ),
+                  //Skip button
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(10, 5, 10, 15),
+                    child: Center(
+                      child: InkWell(
+                          child: Text(
+                            'Skip',
+                            style: TextStyle(fontSize: 18, color: Colors.blue),
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                              BottomNavigationBarController.routeName,
+                            );
                           }),
                     ),
                   ),

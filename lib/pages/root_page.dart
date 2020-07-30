@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '../providers/auth.dart';
 
 //Pages
-//import './login_page.dart';
+import './login_page.dart';
 import '../navigation/bottom-nav-bar-controller.dart';
 
 //websocket
@@ -76,7 +76,7 @@ class _RootPageState extends State<RootPage> {
 
   @override
   Widget build(BuildContext context) {
-    //return _sessionRetrieved ?  BottomNavigationBarController() : LoginPage();
-    return BottomNavigationBarController();
+    return _sessionRetrieved ? BottomNavigationBarController() : LoginPage();
+    //return BottomNavigationBarController();
   }
 }
