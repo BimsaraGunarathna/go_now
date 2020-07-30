@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 //Pages
 import './signup_page.dart';
 import './forgot_password_page.dart';
-import '../navigation/bottom-nav-bar-controller.dart';
 
 //providers
 import '../providers/auth.dart';

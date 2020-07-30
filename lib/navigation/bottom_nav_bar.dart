@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_icons/flutter_icons.dart';
 
 //Pages
-import '../pages/search_page.dart';
+import '../pages/home_page.dart';
 //import '../pages/order_page.dart';
 //import '../pages/user_vehicle_page.dart';
 import '../pages/host_page.dart';
@@ -33,8 +33,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     switch (selectedIndex) {
       case 0:
         {
-          Navigator.of(context)
-              .pushReplacementNamed(SearchPage.routeName);
+          Navigator.of(context).pushReplacementNamed(HomePage.routeName);
         }
         break;
       case 1:

@@ -14,13 +14,14 @@ class _VINScannerPageState extends State<VINScannerPage> {
   bool switchControl = false;
   var textHolder = 'Switch is OFF';
 
+  /*
   //initial values for make,.
   var _initValues = {
     'make': '',
     'model': '',
     'type': '',
   };
-
+  */
   //initiate on form submission.
   Future<void> _saveForm() async {
     _form.currentState.save();
@@ -102,7 +103,7 @@ class _VINScannerPageState extends State<VINScannerPage> {
                 onSaved: (value) async {
                   //WP0ZZZ99ZTS392124
                   var vin = VIN(number: '$value', extended: true);
-                  
+
                   print('WMI: ${vin.wmi}');
                   print('VDS: ${vin.vds}');
                   print('VIS: ${vin.vis}');

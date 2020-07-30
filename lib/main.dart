@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 //Pages
 import './pages/root_page.dart';
 import './navigation/bottom-nav-bar-controller.dart';
-import './pages/search_page.dart';
+import 'pages/home_page.dart';
 import './pages/vehicle_detail_page.dart';
 import './pages/wishlist_page.dart';
 import './pages/order_page.dart';
@@ -29,8 +29,8 @@ import './providers/orders.dart';
 import './providers/auth.dart';
 
 //test
-import './testing/websocket.dart';
-import 'package:web_socket_channel/io.dart';
+//import 'package:web_socket_channel/io.dart';
+//import './testing/websocket.dart';
 
 void main() => runApp(MyApp());
 
@@ -100,22 +100,10 @@ class _MyAppState extends State<MyApp> {
           value: Wishlist(),
         ),
       ],
-      //ChangeNotifierProvider.value(
-      //value: Vehicles(),
-      //builder: (ctx) => Vehicles(),
       child: Consumer<Auth>(
         builder: (context, authData, _) => MaterialApp(
           title: 'Go Now',
           theme: ThemeData(
-            // This is the theme of your application.
-            //
-            // Try running your application with "flutter run". You'll see the
-            // application has a blue toolbar. Then, without quitting the app, try
-            // changing the primarySwatch below to Colors.green and then invoke
-            // "hot reload" (press "r" in the console where you ran "flutter run",
-            // or simply save your changes to "hot reload" in a Flutter IDE).
-            // Notice that the counter didn't reset back to zero; the application
-            // is not restarted.
             primarySwatch: Colors.orange,
           ),
           home: RootPage(),
@@ -126,14 +114,12 @@ class _MyAppState extends State<MyApp> {
                 'wss://3bpxptbbj1.execute-api.ap-south-1.amazonaws.com/dev'),
           ),
           */
-          //home: BottomNavigationBarController(),
-          //home: TestPage(),
 
           routes: {
             //Pages
             RootPage.routeName: (ctx) => RootPage(),
             AuthPage.routeName: (ctx) => AuthPage(),
-            SearchPage.routeName: (ctx) => SearchPage(),
+            HomePage.routeName: (ctx) => HomePage(),
             VehicleDetailPage.routeName: (ctx) => VehicleDetailPage(),
             WishlistPage.routeName: (ctx) => WishlistPage(),
             OrderPage.routeName: (ctx) => OrderPage(),

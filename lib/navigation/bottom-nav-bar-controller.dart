@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 //Page
 import '../pages/user_vehicle_host_page.dart';
-import '../pages/search_page.dart';
+import '../pages/home_page.dart';
 import '../pages/profile_page.dart';
 import '../pages/offers_page.dart';
 import '../pages/trip_page.dart';
@@ -20,7 +20,7 @@ class BottomNavigationBarController extends StatefulWidget {
 class _BottomNavigationBarControllerState
     extends State<BottomNavigationBarController> {
   final List<Widget> pages = [
-    SearchPage(
+    HomePage(
       key: PageStorageKey('Page1'),
     ),
     TripPage(

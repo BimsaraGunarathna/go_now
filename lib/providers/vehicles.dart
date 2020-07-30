@@ -146,7 +146,7 @@ class Vehicles with ChangeNotifier {
 
     //depricated typed is removed.
     //DelegatingStream.typed(file.openRead())
-    final stream = http.ByteStream(DelegatingStream.typed(file.openRead()));
+    final stream = http.ByteStream(DelegatingStream(file.openRead()));
     final length = await file.length();
 
     final uri = Uri.parse(_s3Endpoint);
@@ -266,7 +266,7 @@ class Vehicles with ChangeNotifier {
       //Store fetched items.
       _hostItems = loadedHostVehicles;
       _items = loadedVehicles;
-      
+
       notifyListeners();
     } on SocketException catch (error) {
       print('SocketException Occurred(1) : $error');
@@ -280,9 +280,8 @@ class Vehicles with ChangeNotifier {
     notifyListeners();
   }
 
-
 //Get the vehicles hosted by owner.
-Future<void> fetchHostedVehicles() async {
+  Future<void> fetchHostedVehicles() async {
     print('idToken @ fetchAndSetVehicles: ' + idToken);
     final url =
         'https://ao83dvqxaf.execute-api.ap-south-1.amazonaws.com/dev/host';

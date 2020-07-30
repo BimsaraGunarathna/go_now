@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 //Widgets
 import '../widgets/vehicle_grid.dart';
-import '../widgets//badge.dart.dart';
+import '../widgets/badge.dart.dart';
 import '../widgets/app_drawer.dart';
 
 //Providers
@@ -13,7 +13,7 @@ import '../providers/auth.dart';
 import '../providers/wishlist.dart';
 
 //Pages
-import './wishlist_page.dart';
+import 'wishlist_page.dart';
 
 //Exceptions
 import '../exceptions/http_exception.dart';
@@ -26,16 +26,16 @@ enum FilterOptions {
   All,
 }
 
-class SearchPage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   static const routeName = '/main-dashboard-page';
 
-  const SearchPage({Key key}) : super(key: key);
+  const HomePage({Key key}) : super(key: key);
 
   @override
-  _SearchPageState createState() => _SearchPageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _SearchPageState extends State<SearchPage> {
+class _HomePageState extends State<HomePage> {
   bool _isLoading = false;
   int n;
 
@@ -59,7 +59,8 @@ class _SearchPageState extends State<SearchPage> {
 
   Future<void> _getIdentityId() async {
     try {
-      String identityId = Provider.of<Auth>(context, listen: false).getIdentityId();
+      String identityId =
+          Provider.of<Auth>(context, listen: false).getIdentityId();
       print('Identity ID @ Search : $identityId');
       Provider.of<Vehicles>(context, listen: false).haveIdentityId(identityId);
       setState(() {
