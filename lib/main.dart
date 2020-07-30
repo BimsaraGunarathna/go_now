@@ -104,7 +104,13 @@ class _MyAppState extends State<MyApp> {
         builder: (context, authData, _) => MaterialApp(
           title: 'Go Now',
           theme: ThemeData(
-            primarySwatch: Colors.orange,
+            // Define the default font family.
+            textTheme: TextTheme(
+              headline1: TextStyle(),
+              headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+              bodyText1: TextStyle(fontFamily: 'defualt'),
+              //bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'fm'),
+            ),
           ),
           home: RootPage(),
           /*

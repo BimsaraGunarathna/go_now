@@ -57,6 +57,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
+  //get the identity id from Auth provider.
   Future<void> _getIdentityId() async {
     try {
       String identityId =
@@ -74,6 +75,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  //get the id token from Auth provider.
   Future<void> _getIdToken() async {
     try {
       String idToken = Provider.of<Auth>(context, listen: false).getIdToken();
@@ -149,6 +151,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  //Refresh the page
   Future<void> _refreshVehicles() async {
     try {
       await Provider.of<Vehicles>(context, listen: false).fetchAndSetVehicles();
@@ -178,11 +181,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final productContainer = Provider.of<Vehicles>(context);
+    //final productContainer = Provider.of<Vehicles>(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Vehicles Demo'),
+        title: Text('GoNow'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -193,6 +196,7 @@ class _HomePageState extends State<HomePage> {
               );
             },
           ),
+          /*
           PopupMenuButton(
             onSelected: (FilterOptions selectedValue) {
               if (selectedValue == FilterOptions.Favourites) {
@@ -215,6 +219,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+          */
           Consumer<Wishlist>(
             builder: (_, wishlist, ch) => Badge(
               child: ch,
@@ -222,7 +227,7 @@ class _HomePageState extends State<HomePage> {
             ),
             child: IconButton(
               icon: Icon(
-                Icons.shopping_cart,
+                Icons.my_location,
                 color: Colors.white30,
               ),
               onPressed: () {
