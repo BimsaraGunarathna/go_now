@@ -118,12 +118,6 @@ class _MyAppState extends State<MyApp> {
             // is not restarted.
             primarySwatch: Colors.orange,
           ),
-          //home: CreateNewPasswordPage(),
-          //home: VehicleItemPage(),
-          //home: LoginPage(),
-          //home: VINScannerPage(),
-          //home: SearchPage(),
-          //home: HomePage(),
           home: RootPage(),
           /*
           home: WebSocket(
